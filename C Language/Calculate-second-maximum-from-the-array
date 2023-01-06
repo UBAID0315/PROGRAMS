@@ -1,0 +1,40 @@
+#include<stdio.h>
+
+int main()
+{
+	int array[10],max,*p;
+	p = array;
+	
+	for (int i=0;i<10;i++)
+	{	
+		printf("Enter the value of %d: ",i+1);
+		scanf("%d",&*(array+i));
+	}
+	
+	max = *p;
+	// for first maximum
+	for(int i=0;i<10;i++)
+	{
+	
+		if(max >= *(p+1))
+		{
+			p++;
+			continue; 
+		}
+		else 
+		{ 	
+			max = *(p+1);
+			p++;
+		}
+	}
+	// for second maximum
+//		for(int i=0;i<10;i++)
+//	{
+//		if()
+//		{
+//			
+//		}
+//	}
+	
+	printf("The max is %d",max);
+}
