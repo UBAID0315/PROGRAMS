@@ -1,0 +1,43 @@
+#include<stdio.h>
+void main()
+{
+    int  small=0,smallest[10];
+     for(int i=0;i<11;i++)
+     {
+         printf("Enter the value of  [%d]: ",i);
+         scanf("%d",&smallest[i]);
+     }
+    
+    small=smallest[0];
+
+    for(int i=1;i<=7;i++)
+    {
+        if(small<=smallest[i])
+        {
+            small=small;    
+        }
+        else
+        {
+            small=smallest[i];
+        }
+    }
+    printf("The smallest is %d",small);
+    if(small > 0)
+    {
+    	if(small==0)
+    	{
+    	 small-=1;
+		}
+		else{
+			small-=2;
+		}
+	}
+	else
+	{
+		if(small==0)
+		{
+			small+=1;
+		}
+	}
+	printf("\n\nThe smallest is %d",small);
+	}
