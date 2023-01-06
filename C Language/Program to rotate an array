@@ -1,0 +1,33 @@
+#include<stdio.h>
+void main()
+{			
+                                                                // rotation of array
+	int n;
+  
+  printf("Enter the size of array: ");                          // size of array
+  scanf("%d",&n);
+  
+  int arr[n];
+  
+  printf("Enter the elements of array: ");
+  for(int i=0;i<n;i++)                                          // Loop for taking input values
+  {
+    scanf("%d",&arr[i]);
+  }
+  
+	for(int j=1;j<=2;j++)                                        // Set the value you want to rotate you can also put sacnf there to ask from 
+                                                                  user to enter value
+	{
+		for(int i=0;i<6-1;i++)
+	{
+		int temp;
+		temp = arr[i];
+		arr[i] = arr[i+1];
+		arr[i+1] = temp;
+	}
+	}
+	for(int i=0;i<6;i++)
+	{
+		printf("%d\t",arr[i]);
+	}
+}
