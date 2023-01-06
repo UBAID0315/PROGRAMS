@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+void main()
+{
+	int d1,d2,result,arr[13]={0};
+	srand((unsigned)time(NULL));
+	for(int i=0;i<1000;i++)
+	{
+		d1=rand()%(1+6);
+		d2=rand()%(1+6);
+		result=d1+d2;
+		arr[result]++;
+	}
+	for(int i=2;i<=12;i++)
+	{
+		printf("%d can be count as %d\n",i,arr[i]);
+	}
+	 
+}
