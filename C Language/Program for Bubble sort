@@ -1,0 +1,28 @@
+#include<stdio.h>
+void main()
+{
+	int arr[7];     // 7 is the size of array  start from 0 to 6
+	printf("Enter seven elements array you want to sort: ");
+	for(int i=0;i<7;i++)
+	{
+	  scanf("%d",&arr[i]);
+	}
+	
+	for(int j=0;j<7;j++)
+	{
+	for(int i=0;i<7-1;i++)
+	{
+		if(arr[i] > arr[i+1])
+		{
+			int temp=0;
+			temp=arr[i];
+			arr[i]=arr[i+1];
+			arr[i+1]=temp;
+		}
+	}	
+	}
+	for(int i=0;i<7;i++)
+	{
+		printf("%d\t",arr[i]);
+	}
+}
