@@ -1,0 +1,30 @@
+#include<stdio.h>
+void main()
+{
+    int diagonal[3][3],sum;
+     for(int i=0;i<3;i++)
+     {
+         for (int j=0;j<3;j++)
+         {
+             printf("Enter the value of [%d%d]: ",i,j);
+             scanf("%d",&diagonal[i][j]);
+         }
+     }
+    printf("\n\n Your original matrix is\n\n");
+    for(int i=0;i<3;i++)
+    {
+    for (int j=0;j<3;j++)
+        {
+            printf("[%d]\t",diagonal[i][j]);
+        }
+        printf("\n");
+    }
+    sum=diagonal[0][0];
+    int j=1;
+    for(int i=1;i<3;i++)
+    {
+        sum=sum+diagonal[i][j];
+        j++;
+    }
+    printf("\nThe sum of the diagonal is: %d",sum);    
+}
