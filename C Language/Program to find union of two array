@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+
+int main(){
+	
+int	arr1[20],arr2[20],merge[20],i,j,k=0,size1,size2;
+
+printf("Enter the size of first Array : ");
+scanf("%d",&size1);
+	
+printf("Enter the size of second Array : ");
+scanf("%d",&size2);
+
+	printf("Enter the Elements of array-1: \n");
+	for(i=0;i<size1;i++)
+	{
+		scanf("%d",&arr1[i]);
+		
+	} 
+	
+	printf("Enter the Elements of array-2: \n");
+	for(i=0;i<size2;i++)
+	{
+		scanf("%d",&arr2[i]);
+		
+	} 	
+	for (i=0;i<size1;i++)
+	{
+		for(j=0;j<k;j++)
+		{
+			if(merge[j]==arr1[i])
+			break;
+		}
+		if(j==k) 
+		{
+		merge[k]=arr1[i];
+		k++;
+		}
+		
+	}
+	for(i=0;i<size2;i++)
+	{
+		for(j=0;j<k;j++)
+		{
+			if(merge[j]==arr2[i])
+			break;
+		}
+		if(j==k)
+		{
+			merge[k]=arr2[i];
+			k++;
+			
+		}
+	}
+	printf("Union of set A and set B is : \n");
+	for(i=0;i<k;i++)
+	{
+		printf("%d  ",merge[i]);			
+	}	
+		
+	return 0;
+}
