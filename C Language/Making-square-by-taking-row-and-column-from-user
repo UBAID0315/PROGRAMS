@@ -1,0 +1,25 @@
+#include<stdio.h>
+void main()
+{
+	int row,col;
+	printf("Enter your rows: ");                  //Taking rows from the user
+	scanf("%d",&row);
+	printf("Enter your coulmns: ");               //Taking columns from the user
+	scanf("%d",&col);
+	printf("\n");
+	for(int i=1;i<=row;i++)                         // Loop to control the rows of square
+	{
+		for(int j=1;j<=col;j++)                      // Loop to control the columns of square
+		{
+			if((i==1)||(i==row)||(j==1)||(j==col))
+			{
+				printf("* ");
+			}
+			else
+			{
+				printf("  ");
+			}
+		}
+		printf("\n");
+	}
+}
