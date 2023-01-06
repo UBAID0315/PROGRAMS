@@ -1,0 +1,66 @@
+#include<stdio.h>
+
+void main()
+{
+    int a,b,c,d;
+    
+    // Enter the rows and columns of martix 1
+    
+    printf("Enter the rows of matrix-1: ");
+    scanf("%d",&a);
+	printf("Enter the cols of matrix-1: ");
+    scanf("%d",&b);
+	
+	// Enter the rows and columns of matrix 2
+	
+	printf("Enter the rows of matrix-2: ");
+    scanf("%d",&c);
+	printf("Enter the cols of matrix-2: ");
+    scanf("%d",&d);
+    int arr[a][b],arr2[c][d];
+    
+    // calculation
+    int sum=0;
+	if(a&&b != c&&d)
+	{
+        printf("\n Multiplication of matrixes is not possible");
+    }	
+	else
+	{
+	    
+    // taking values of first array from the user
+    printf("\n\nEnter the values of array-1: ");
+     for(int i=0;i<a;i++)
+     {
+         for(int j=0;j<b;j++)
+         {
+             scanf("%d",&arr[i][j]);
+         }
+     }
+    
+    // taking values of second array from the user
+    
+     printf("\nEnter the values of array-2: ");
+     for(int i=0;i<c;i++)
+     {
+         for(int j=0;j<d;j++)
+         {
+             scanf("%d",&arr2[i][j]);
+         }
+     }
+		printf("The Resulting matrix\n");
+    
+    for(int i=0;i<a;i++)
+    {
+        for(int j=0;j<b;j++)
+        {
+          for(int k=0;k<c;k++)
+          {
+            sum = sum + (arr[i][k] * arr2[k][j]);
+          }
+        printf("%d\t",sum);
+        sum=0;
+        }
+        printf("\n");	
+     }
+}
