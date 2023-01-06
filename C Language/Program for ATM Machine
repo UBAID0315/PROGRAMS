@@ -1,0 +1,96 @@
+#include <stdio.h>
+void main()
+{
+	int pin,input,count=0;					// pin is 1234   // input used for input the value from user to add amount in account
+	char choice,select;
+	jump:
+		printf("Please Enter Your Account Pin: ");
+		scanf("%d",&pin);
+			
+	if(pin == 1234)
+	{
+		while(count<=0)
+		{
+			printf("1) Balance Checking (Enter B)\n");
+			printf("2) Cash Withdrawal (Enter W)\n");
+			printf("3) Cash deposition (Enter D)\n");	
+	
+			printf("\nSelect your option from the list: ");
+			scanf("%s",&choice);																
+		
+			if((choice == 'B')||(choice == 'b'))							// For Balance checking
+			{	
+				printf("Your account balance is 1000Rs");
+				break;
+			}
+			else if((choice == 'W')||(choice == 'w'))						// Take cash as input
+			{
+				printf("Take your cash\n\t\t Thank You for transcation");
+				break;
+			}
+			else if((choice == 'D')||(choice == 'd'))						//  Want to deposit amount in bank
+			{
+				int sum=1000;
+				printf("Select your amount\n\n1) 500\t2)1000\t3)2000\t\n\n4)2500\t5)5000\t6)10000\t\n\n7)20000\t8)Input_Amount");
+				printf("\n\nSelect the option according to your need: ");
+				scanf("%s",&choice);
+				if(choice == '1')
+				{
+					sum += 500;
+				}
+				else if(choice == '2')
+				{
+					sum += 1000;
+				}
+				else if(choice == '3')
+				{
+					sum += 2000;
+				}
+				else if(choice == '4')
+				{
+					sum += 2500;
+				}
+				else if(choice == '5')
+				{
+					sum += 5000;
+				}
+				else if(choice == '6')
+				{
+					sum += 10000;
+				}
+				else if(choice == '7')
+				{
+					sum += 20000;
+				}			
+				else
+				{
+					printf("\n\nEnter the value of want to add: ");
+					scanf("%d",&input);
+					sum += input;
+					printf("\nYour account balance is: %d\n \n\t BALANCE ADDED SUCCESSFULLY",sum);
+					break;
+				}
+			}
+			else if(choice == '4')
+			{
+				break;
+			}
+		}
+		count++;	
+	}
+	else
+	{
+		printf("Incorrect pin");
+	}
+
+	printf("\n\nDo you want to enter pin again?y/n\n");
+	scanf("%s",&choice);
+	if(choice == 'y')
+	{
+		goto jump;
+	}
+	else
+	{
+		printf("\nHAPPY TO SEE YOU :)");
+	}
+}
