@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int lower_mat(int mat[3][3]){				// for lower matrix
+   int i, j;
+   for ( i = 0; i < 3; i++){
+      for ( j = 0; j < 3; j++){
+         if( i < j )
+            printf("0\t");
+         else
+            printf("%d\t", mat[i][j]);
+      }
+      printf("\n");
+   }
+   printf("\nLower Traingular Matrix\n\n");
+}
+int upper_mat(int mat[3][3]){				// for upper matrix
+   int i, j;
+   for ( i = 0; i < 3; i++){
+      for ( j = 0; j < 3; j++){
+         if( i > j )
+            printf("0\t");
+         else
+            printf("%d\t", mat[i][j]);
+      }
+      printf("\n");
+   }
+   printf("\nUpper Traingular Matrix");
+}
+int main(){
+   int mat[3][3];
+   for(int i=0;i<3;i++)
+   {
+   	for(int j=0;j<3;j++)
+   	{
+   		printf("Enter the value of array [%d%d]: ",i,j);
+		scanf("%d",&mat[i][j]);	
+	}
+   }
+   lower_mat(mat);
+   upper_mat(mat);
+   return 0;
+}
