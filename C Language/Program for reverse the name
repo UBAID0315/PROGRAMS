@@ -7,16 +7,18 @@ void main()
 	int lenght,count=0;	
 	char check,name[15];
 	
-	jump:
-	{	
-    														// for taking name from the user
-		printf("Enter the name: ");
-    	scanf("%s", name);
-    	goto end;
-	}
-
 	printf("Do you want to check you name size? ");
 	scanf("%s", &check);
+	
+	if((check == 'Y')||(check == 'y'))
+	{
+	jump:
+	{	
+						// for taking name from the user
+		printf("Enter the name: ");
+    		scanf("%s", name);
+    		goto end;
+	}
 	
 	if(check == 'Y')
 	{
@@ -25,25 +27,24 @@ void main()
     
 	end:
 
-    lenght = strlen(name)-1;
+    	lenght = strlen(name)-1;
 
-    for (int  i = 0; i < lenght-1; i++)
-    {
-        if( name[i] != name[lenght])
-        {
-            char temp;
-            temp = name[i];
-            name[i] = name[lenght-i];
-            name[lenght-i] = temp;
-            count++;
-        }
-            if(count == 3)
-            {
-              break;
-            }
-    }
-      printf("\nYour reversed name is: ");
-      printf("%s", name);
-
-
+    	for (int  i = 0; i < lenght-1; i++)
+    	{
+        	if( name[i] != name[lenght])
+        	{
+            		char temp;
+            		temp = name[i];
+            		name[i] = name[lenght-i];
+            		name[lenght-i] = temp;
+            		count++;
+        	}
+            	if(count == 3)
+            	{
+            		break;
+            	}
+    	}
+      	printf("\nYour reversed name is: ");
+      	printf("%s", name);
+}
 }
