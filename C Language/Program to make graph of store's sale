@@ -1,0 +1,30 @@
+#include<stdio.h>
+void main()
+{
+    int size;
+                                                    // taking array size from user according to their need
+    printf("Enter the stores size you want to put: ");
+    scanf("%d", &size);
+    
+    
+    int sale[size],bar[size];
+                                                    // taking value input from user
+    for (int  i = 0; i < 5; i++)
+    {
+        printf("Enter the sale of store %d: ",i+1);
+        scanf("%d",&sale[i]);
+    }
+
+    printf("\n");
+                                                    // to generate graph we use loop
+    for (int  i = 0; i < 5; i++)
+    {
+        bar[i] = sale[i] / 100;
+        while (bar[i] != 0)
+        {
+            printf("*");
+            bar[i]--;
+        }
+        printf("\n");
+    }
+}
