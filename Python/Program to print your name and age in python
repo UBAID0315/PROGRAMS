@@ -1,0 +1,9 @@
+Name = input('Enter your name: ')           # input() is a built function 
+Age  = input('Enter your age: ')            # to take value from the user 
+
+print(Name)
+print(Age)
+
+print("Hello my name is {} and I am {} years old".format(Name,Age))
+
+# format() is also a built-in function
