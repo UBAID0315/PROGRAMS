@@ -1,0 +1,17 @@
+# Data type conversions
+
+number_1 = '15'
+number_2 = 23
+
+# Original data type
+print("\b")
+print('The original first no type: ',type(number_1))     # string
+print('The original second no type: ',type(number_2))    # integer
+
+# Now we convert it from one type to another
+number_1 = int(number_1)
+number_2 = str(number_2)
+
+print("\b")
+print('The converted first type: ',type(number_1))
+print('The converted second type: ',type(number_2))
