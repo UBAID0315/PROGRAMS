@@ -1,0 +1,9 @@
+size = int(input('Enter your last number: '))    # last number is value that on which you want to exit
+num = 1
+
+while num < size:
+    if num % 2 == 0:
+        print('your entered number {} is even'.format(num))
+    else:
+        print('your entered number {} is odd'.format(num))
+    num = num + 1
