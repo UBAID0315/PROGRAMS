@@ -1,0 +1,13 @@
+def my_function():                      # outer body starts
+
+    name = input('Enter your name: ')       # Take  name from user
+    
+    def age():                              # inner body starts 
+        
+        age = input('Enter your age: ')     # Take age from the user
+        print('My age is: ',age)
+    
+    age()                               # inner body ends
+    print('My name is: ',name)
+
+my_function()                         # outer body ends 
