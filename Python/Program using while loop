@@ -1,0 +1,8 @@
+current_level = 0
+final_level = 5
+
+while current_level != final_level:
+    if current_level < final_level:
+        print('The level {} is passed'.format(current_level+1))
+        current_level = current_level+1
+print('game finish')
