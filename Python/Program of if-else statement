@@ -1,0 +1,18 @@
+name = input('Enter your name: ')                                # Take input name from user
+age = int(input('Enter your age: '))                             # Take input age from user
+gender = input('Enter your gender M/F: ')                        # Take gender
+
+if(age > 23):                                                   # if body starts
+
+        if((gender == M) or (gender == F)):
+            print('you are eligible for this job')
+        else:
+            print('you are not-eligible for this job')
+
+elif(age < 23):                                                 # if body ends and next if starts
+
+    print('you are not-eligible for this job')
+
+else:                                                           # if ends else body starts
+
+    print('your are eligible for this job')
