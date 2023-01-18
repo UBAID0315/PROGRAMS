@@ -1,0 +1,7 @@
+size = int(input('How many times you want to execute the loop: '))      # Take size from user
+
+size = range(size)                                                      # range is a built-in function to get the value of limit
+
+print('\b')
+for i in size:                                                          # i starts from zero (default)
+    print('Hello world using Python')
