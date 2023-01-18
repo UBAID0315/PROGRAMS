@@ -1,5 +1,7 @@
+size = int(input('Enter your last limit: '))
+
 current_level = 0
-final_level = 5
+final_level = size
 
 while current_level != final_level:
     if current_level < final_level:
