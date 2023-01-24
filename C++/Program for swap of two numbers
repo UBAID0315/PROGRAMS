@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int num1,num2,temp;
+    
+    cout<<"Enter your num1: ";
+    cin>>num1;
+    cout<<"Enter your num2: ";
+    cin>>num2;
+    
+    cout<<endl;
+    
+	cout<<"The num1 before swap: "<<num1<<endl;
+    cout<<"The num2 before swap: "<<num2<<endl;    
+    
+	temp = num1;
+    num1 = num2;
+    num2 = temp;
+    
+	cout<<endl;
+    
+	cout<<"The num1 after swap: "<<num1<<endl;
+    cout<<"The num2 after swap: "<<num2<<endl;
+}
