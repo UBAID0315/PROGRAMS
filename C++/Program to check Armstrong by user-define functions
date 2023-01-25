@@ -4,7 +4,7 @@ using namespace std;
 int no_digits(int);
 int power(int , int);
 int total(int , int);
-int check(int , int);
+void check(int , int);
 
 int main()
 {
@@ -13,7 +13,7 @@ int main()
      cin>>num;
     
     result = no_digits(num);
-    result = check(result,num);
+    check(result,num);
 }
 
 int no_digits(int num)
@@ -55,14 +55,14 @@ int power(int digit, int count)
     return total; 
 }
 
-int check(int result, int num)
+void check(int result, int num)
 {
 	if(result == num)
 	{
-		cout<<"armstrong";
+		cout<<endl<<"armstrong";
 	}
 	else
 	{
-		cout<<"Its not armstrong number";
+		cout<<endl<<"Its not armstrong number";
 	}
 }
