@@ -1,0 +1,60 @@
+#include<iostream>
+#include <iomanip>
+using namespace std;
+
+void addition(int,int,int);
+void multiplication(int,int,int);
+void subtraction(int,int,int);
+void division(float,float,float);
+
+int main(int a, int b, int result)
+{
+	char choice;
+	
+	cout<<"Enter your value 1; ";
+	cin>>a;
+	cout<<"Enter your value 2: ";
+	cin>>b;
+	cout<<endl;
+	
+	cout<<"Which operation you want to perform \n1) Addition\n2) Subtraction\n3) Multiplication\n4) Division"<<endl<<endl<<"Enter your choice: ";
+	cin>>choice;
+	
+	if(choice == '1')
+	{
+		addition(a,b,result);
+	}
+	else if(choice == '2')
+	{
+		subtraction(a,b,result);
+	}
+	else if(choice == '3')
+	{
+		multiplication(a,b,result);
+	}
+	else if(choice == '4')
+	{
+		division(a,b,result);
+	}
+}
+
+void addition(int a, int b, int result)
+{
+	result = a + b;
+	cout<<"Your Sum is: "<<result<<endl;
+}
+void multiplication(int a,int b, int result)
+{
+	result = a * b;
+	cout<<"Your Multiplication is: "<<result<<endl;
+}
+void subtraction(int a,int b, int result)
+{
+	result = a - b;
+	cout<<"Your Subtraction is: "<<result<<endl;
+}
+void division(float a,float b, float result)
+{
+	result = a / b;
+	cout<<"Your Dividend is: "<< setprecision(2)<<result<<endl;
+}
