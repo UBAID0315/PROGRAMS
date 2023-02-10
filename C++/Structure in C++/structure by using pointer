@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+
+struct point              // struct is used to make user-defined function 
+{
+	int x,y;
+};
+
+void change_data(point *p)
+{
+	p->x=12;
+	p->y=13;
+}
+int main()
+{
+	point p1,*p;
+	
+	p1.x=6;
+	p1.y=7;
+	
+	change_data(&p1);
+	
+	cout<<p1.x<<" "<<p1.y;
+}
