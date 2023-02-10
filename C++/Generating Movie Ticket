@@ -1,0 +1,82 @@
+#include<iostream>
+#include<cstring>
+#include<iomanip>
+#include<thread>
+
+using namespace std;
+
+int main()
+{
+    string movie_name;
+    char choose;
+    int at_price,amount,ct_price,sold_tickets,total_tickets = 2000,
+		tickets,donation,total_price,gross;
+
+	cout<<"Enter your movie name: ";
+    getline(cin,movie_name);
+    cout<<endl<<"Which ticket price you want to enter?(A for adult, C for Child): ";
+    cin>>choose;
+
+	at_price = 50;
+	ct_price = 25;
+	
+	if((choose == 'A')||(choose == 'a')||(choose == 'C')||(choose == 'c'))
+	{
+	    cout<<endl<<"Enter the number of tickets were sold: ";
+	    cin>>sold_tickets;
+	
+	    if(sold_tickets > total_tickets)
+	    {
+	    	cout<<"Invalid Input(sold tickets are more than total tickets)";
+		}
+		else
+		{
+			if(choose == 'A')
+			{
+				gross =  at_price * sold_tickets;
+			}
+			else if(choose = 'C')
+			{
+				gross = ct_price * sold_tickets;
+			}
+			cout<<"Your total gross is now: "<<gross<<endl;
+			
+			cout<<endl<<"Wishing to donate some amount?(Y/N): ";
+			cin>>choose;
+			if((choose == 'Y')||(choose == 'y'))
+			{
+				cout<<endl<<"Enter the percentage of donation: ";
+				cin>>donation;
+				
+				if((choose == 'Y')||(choose == 'y'))
+				{
+					amount = ((float)gross/donation);
+				}
+				else
+				{
+					cout<<endl<<"You have only "<<gross<<"rs left(insufficent balance)";
+				}
+			}
+			else if((choose == 'N')||(choose == 'n'))
+			{
+				cout<<"Ok! It upto you (THANK YOU)";
+			}
+		
+			total_price = gross - amount;
+		}
+	
+		cout<<"\n\t\tPlease! while your slip is generated...";
+		sleep(2);	    
+		cout<<endl<<endl;
+		for(int i=0; i<30; i++)
+	    {
+	        cout<<"-*";
+	    }
+		cout<<endl<<endl<<setfill('.')<<setw(30)<<left<<"Movie Name:"<<" "<<movie_name; 	
+		cout<<endl<<endl<<setfill('.')<<setw(30)<<left<<"Numbers of tickets sold:"<<" "<<sold_tickets;
+		cout<<endl<<endl<<setfill('.')<<setw(30)<<left<<"Gross Amount:"<<" "<<gross<<" Rs";
+		cout<<endl<<endl<<setfill('.')<<setw(30)<<left<<"Percentage of gross donated:"<<" "<<donation<<"%";
+		cout<<endl<<endl<<setfill('.')<<setw(30)<<left<<"Amount Donated:"<<" "<<setprecision(3)<<amount<<" Rs";
+		cout<<endl<<endl<<setfill('.')<<setw(30)<<left<<"Net sale:"<<" "<<total_price<<" Rs";
+		}
+}
