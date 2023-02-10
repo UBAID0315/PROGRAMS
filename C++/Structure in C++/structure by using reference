@@ -1,0 +1,22 @@
+
+//points structure by reference
+
+struct Point
+{
+    int x,y;
+};
+void change_data(Point *p)
+{
+    p->x=5;
+    p->y=6;
+}
+int main()
+{
+    Point p1;
+    p1.x=2;
+    p1.y=3;
+    // p2 = &p1;   // point by reference
+    change_data(&p1);
+    cout<<"p1.x :"<<p1.x<<endl;
+    cout<<"p1.y :"<<p1.y<<endl;
+}
