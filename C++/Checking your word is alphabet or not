@@ -1,0 +1,19 @@
+#include<iostream>
+
+using namespace std;
+int main()
+{
+	char element;
+	
+	cout<<"Enter word or integer you want to check: ";
+	cin>>element;
+	
+	if((element > 'a' && element < 'z')||(element > 'A' && element < 'Z'))
+	{
+		cout<<"This is an alphabet";
+	}
+	else
+	{
+		cout<<"This is an integer";
+	}
+}
