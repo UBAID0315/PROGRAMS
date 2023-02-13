@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+struct emploeeType
+{
+    int employee_number;
+    float employee_salary;
+};
+
+void enterdata(emploeeType e[])
+{
+    for (int i = 0; i < 3; i++)
+    {
+     cout<<"Employee number: "<<endl;
+     cin>>e[i].employee_number;
+     cout<<"Enter the salary: "<<endl;
+     cin>>e[i].employee_salary;
+    }
+}
+
+void display(emploeeType e[])
+{
+    cout<<endl;
+
+    for (int  i = 0; i < 3; i++)
+    {
+        cout<<"Employee no: "<<e[i].employee_number<<endl;
+        cout<<"Employee salary: "<<e[i].employee_salary<<endl;
+    }
+}
+
+int main()
+{
+    emploeeType e[3];
+    enterdata(e);
+    display(e);
+}
