@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+struct pointtype
+{
+    int x;
+    int y;
+};
+
+void sum(pointtype p1[2],pointtype p2[2])
+{
+    for (int i = 0; i < 2; i++)
+    {
+        sum[i] = p1[i].x + p1[i+1].x;
+        sum[i+1] = p1[i].y + p1[i+1].y;
+    }
+}
+
+int main()
+{
+    pointtype p1[2],p2[2];
+    for (int i = 0; i < 2; i++)
+    {
+        cout<<"Enter the co-ordinate of x: ";
+        cin>>p1[i].x;
+        cout<<"Enter the co-ordinate of y: ";
+        cin>>p2[i].y;
+    }
+    sum(p1,p2);
+}
