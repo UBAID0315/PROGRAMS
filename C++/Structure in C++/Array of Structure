@@ -1,0 +1,31 @@
+// array of structures
+
+#include<iostream>
+using namespace std;
+struct student
+{
+    int marks;
+    string name;
+};
+void display(student s[])
+{
+    for (int i = 0; i < 3; i++)
+    {
+        cout<<"Student name: "<<s[i].name<<endl;
+        cout<<"Student marks: "<<s[i].marks<<endl;
+    }
+    
+}
+int main()
+{
+    student s[3];
+    for (int i = 0; i < 3; i++)
+    {
+      cout<<"Enter the student name: ";
+      cin>>s[i].name;
+      cout<<"Enter the student marks: ";
+      cin>>s[i].marks;
+    }
+    display(s);
+}
+
