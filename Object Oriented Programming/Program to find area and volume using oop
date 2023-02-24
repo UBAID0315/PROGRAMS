@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+class room
+{
+private:
+    double length;
+    double breath;
+    double height;
+public:
+    void data(double len, double bre, double hei)
+    {
+        length = len;
+        height = hei;
+        breath = bre;
+    }
+    double calculatearea()
+    {
+        return length * breath;
+    }
+    double calculatevolume()
+    {
+        return length * breath * height;
+    }
+};
+
+int main()
+{
+    room room1;
+
+    room1.data(45.6,78.23,98.12);
+    cout<<"Area " << room1.calculatearea()<<endl;
+    cout<<"Volume "<< room1.calculatevolume()<<endl;
+    return 0;
+}
