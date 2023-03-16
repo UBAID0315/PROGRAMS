@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+
+class medicine
+{
+    string name;
+    string formula;
+    float unit,price,quantity;
+    public:
+        float applyDiscount(float,float);
+        void setvalue(string&,string&,float&,float&);
+};
+
+float  medicine::applyDiscount(float price,float dis_price)
+{
+    float p;
+    p = (price / 100)*dis_price;
+    p = price - p;
+    return p;
+}
+void medicine::setvalue(string &name,string &formula, float &price,float &quantity)
+{
+    this->name = name;
+    this->price = price;
+    this->formula = formula;
+    this->quantity = quantity;
+}
+int main()
+{
+    string name="panadol",formula="cnk003";
+    float price=10,quantity=2,discount=2;
+    medicine m1,m2,m3;
+
+    cout<<"Emter name: ";
+    cin>>name;
+    cout<<"Enter formula: ";
+    cin>>formula;
+    cout<<"Enter unit: ";
+    cin>>price;
+    cout<<"Enter quantity: ";
+    cin>>quantity;
+    cout<<"discount: ";
+    cin>>discount;
+
+    m1.setvalue(name,formula,price,quantity);
+    
+
+    cout<<"price dis: "<<m1.applyDiscount(price,discount)<<endl;
+}
