@@ -1,0 +1,77 @@
+#include<iostream>
+#include<string>
+#include<cctype>
+
+using namespace std;
+
+class Romantype
+{
+private:
+    
+public:
+    enum type{
+        M = 1000,
+        D = 500,
+        C = 100,
+        L = 50,
+        X = 10,
+        V = 5,
+        I = 1
+    };
+    
+    void convertdecimal(string);
+};
+
+void Romantype::convertdecimal(string num)
+{
+    int roman=0,decimal=0;
+
+        for (int i = 0; i < num.length(); i++)
+        {
+            if (num[i] == 'M')
+            {
+                roman = M;
+            }
+            else if (num[i] == 'D')
+            {
+                roman = D;
+            }
+            else if (num[i] == 'C')
+            {
+                roman = C;
+            }
+            else if (num[i] == 'L')
+            {
+                roman = L;
+            }
+            else if (num[i] == 'X')
+            {
+                roman = X;
+            }
+            else if (num[i] == 'V')
+            {
+                roman = V;
+            }
+            else if (num[i] == 'I')
+            {
+                roman = I;
+            }
+            decimal = decimal + roman;
+        }
+        cout<<decimal;
+}
+
+int main()
+{
+    string num;
+    Romantype c;
+
+    cout<<"Enter your numerals: ";
+    cin>>num;
+    for (int i = 0; i < num.length(); i++)
+    {
+        num[i] = toupper(num[i]);
+    }
+    
+    c.convertdecimal(num);
+}
