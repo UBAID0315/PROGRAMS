@@ -27,11 +27,11 @@ void medicine::setvalue(string &name,string &formula, float &price,float &quanti
 }
 int main()
 {
-    string name="panadol",formula="cnk003";
-    float price=10,quantity=2,discount=2;
+    string name,formula;
+    float price,quantity,discount;
     medicine m1,m2,m3;
 
-    cout<<"Emter name: ";
+    cout<<"Enter name: ";
     cin>>name;
     cout<<"Enter formula: ";
     cin>>formula;
