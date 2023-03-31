@@ -1,0 +1,159 @@
+#include<iostream>
+using namespace std;
+
+class DOB
+{
+    int day;
+    int month;
+    int year;
+        public:
+            void setday();
+            void setmonth();
+            void setyear();
+            int getday();
+            int getmonth();
+            int getyear();
+            DOB();
+};
+
+DOB::DOB()
+{
+    day = 1;
+    month = 1;
+    year = 1990;
+}
+void DOB::setday()
+{
+    cout<<"Enter Day: ";
+    cin>>day;
+}
+void DOB::setmonth()
+{
+    cout<<"Enter month: ";
+    cin>>month;
+}
+void DOB::setyear()
+{
+    cout<<"Enter Year: ";
+    cin>>year;
+}
+int DOB::getday()
+{
+    return day;
+}
+int DOB::getmonth()
+{
+    return month;
+}
+int DOB::getyear()
+{
+    return year;
+}
+
+class Contact 
+{
+  string name,email,number;
+  static int count;
+  public:
+    DOB date;
+    void setname();
+    string getname();  
+    void setnumber();
+    string getnumber();
+    void setemail();
+    string getemail();
+    Contact();
+    Contact(string,string,string,int,int,int):date(int,int,int);
+};
+
+int Contact::count=0;
+
+Contact::Contact()
+{}
+Contact::Contact(string name,string email,string number,int day,int month,int year):date(int day,int month,int year)
+{
+    this.name = name;
+    this->email = email;
+    this->number = number;
+}
+
+void Contact::setemail()
+{
+    cout<<"Enter Email: ";
+    cin>>email;
+}
+string Contact::getemail()
+{
+    return email; 
+}
+void Contact::setname()
+{
+    cout<<"Enter Name: ";
+    getline(cin,name);
+    count++;
+}
+string  Contact::getname()
+{
+    return name;
+}
+void Contact::setnumber()
+{
+    cout<<"Enter Number: ";
+    cin>>number;
+}
+string Contact::getnumber()
+{
+    return number;
+}
+
+class ContactBook
+{
+        Contact c[3];
+        public:
+            ContactBook();
+            void printBook();
+            void addcontact();
+};
+
+ContactBook::ContactBook()
+{}
+void ContactBook::addcontact()
+{
+    for (int i = 0; i < 3; i++)
+    {
+        cout<<endl;
+        c[i].setname();
+        c[i].setemail();
+        c[i].setnumber();
+        c[i].date.setday();
+        c[i].date.setmonth();
+        c[i].date.setyear();   
+    }
+}
+void ContactBook::printBook()
+{
+    int month;
+
+    cout<<endl;
+    cout<<"Enter the Month: ";
+    cin>>month;
+    
+    for (int i = 0; i < 3; i++)
+    {
+        if (c[i].date.getmonth() == month)
+        {
+            cout<<endl;
+            cout<<"Name: "<<c[i].getname()<<endl;
+            cout<<"Phone: "<<c[i].getnumber()<<endl;
+            cout<<"Date: "<<c[i].date.getday()<<"/"<<c[i].date.getmonth()<<"/"<<c[i].date.getyear()<<endl;
+            cout<<"Email: "<<c[i].getemail()<<endl;
+        }
+    }
+}
+int main()
+{
+    ContactBook book;
+
+    book.addcontact();
+    book.printBook();   
+}
