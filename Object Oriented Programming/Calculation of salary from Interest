@@ -1,0 +1,77 @@
+#include<iostream>
+#include<math.h>
+#include<iomanip>
+using namespace std;
+
+class SavingAccount
+{
+    float annual_interestrate;
+    float savingBalance;
+
+    public:
+        float calculateMonthlyInterest();
+        void setAnnualInterest(int);
+        void setsavingbalance(int);
+        SavingAccount();
+};
+static float annual_interestrate;
+//######################################################################
+
+SavingAccount::SavingAccount()
+{
+    annual_interestrate = 0;
+    savingBalance = 0;
+}
+
+// setter
+
+void SavingAccount::setsavingbalance(int balance)
+{
+    savingBalance = balance;
+}
+void SavingAccount::setAnnualInterest(int interest)
+{
+    annual_interestrate = interest;
+}
+
+// member function 
+
+float SavingAccount::calculateMonthlyInterest()
+{
+    float balance;
+    annual_interestrate = annual_interestrate/100;
+    balance = (savingBalance * annual_interestrate)/12;
+    return balance;
+}
+
+//####################################################################
+
+int main()
+{
+    SavingAccount saver1,saver2;
+    float balance1,balance2;
+
+    saver1.setsavingbalance(2000);
+    saver2.setsavingbalance(3000);
+    saver1.setAnnualInterest(3);
+    saver2.setAnnualInterest(3);
+
+    balance1 = saver1.calculateMonthlyInterest();
+    balance2 = saver2.calculateMonthlyInterest();
+
+    cout<<"\t\t\t AT Interest 3 percent"<<endl;
+    cout<<"Account 1: "<<balance1<<endl;
+    cout<<"Account 2: "<<balance2<<endl;
+
+    saver1.setsavingbalance(2000);
+    saver2.setsavingbalance(3000);
+    saver1.setAnnualInterest(4);
+    saver2.setAnnualInterest(4);
+    
+    balance1 = saver1.calculateMonthlyInterest();
+    balance2 = saver2.calculateMonthlyInterest();
+
+    cout<<"\t\t\t AT Interest 4 percent"<<endl;
+    cout<<"Account 1: "<<setprecision(2)<<balance1<<endl;
+    cout<<"Account 2: "<<balance2<<endl;
+}
