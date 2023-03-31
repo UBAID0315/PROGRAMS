@@ -1,0 +1,23 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+int main()
+{
+  fstream Filename;
+  Filename.open("Filename", ios::out);
+
+  string line;
+
+  cout<<"Enter the line: ";
+  getline(cin,line);
+
+  if (!Filename)
+  {
+    cout<<"File not exist"<<endl;
+  }
+  else
+  {
+    Filename<<line;
+  }
+}
