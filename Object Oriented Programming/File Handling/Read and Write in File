@@ -1,0 +1,66 @@
+#include<iostream>
+#include<iomanip>
+#include<string>
+#include<fstream>
+using namespace std;
+
+int main()
+{
+    fstream Filename;
+    int choice, size = 0;
+    string journal;
+    
+    cout<<"Array Size: ";
+    cin>>size;
+
+    string *arr = new string [size];
+
+    while (1)
+    {
+        cout<<endl;
+        cout<<"\nChoose from these options: "<<endl;
+        cout<<"1. Add an entry"<<endl;
+        cout<<"2. Display all entries"<<endl;
+        cout<<"3. Exit"<<endl;
+        cout<<endl;
+        cout<<"Enter the Option: ";
+        cin>>choice;
+
+        cin.ignore();
+        if (choice == 1)
+        {
+            Filename.open("Filename",ios::app);
+            if (!Filename)
+            {
+                cout<<"File not exist"<<endl;
+            }
+            else
+            {
+                cout<<"Enter Journal: ";
+                getline(cin,journal);
+            
+                if ( < size)
+                {
+                    arr[size] = journal;
+                    cout<<"\nJournal added successfully"<<endl;
+                    i++;
+                    Filename<<journal<<endl;                    
+                    Filename.close();
+                }
+            }
+        }   
+        else if (choice == 2)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                cout<<"\n"<<arr[i];
+            }
+        }
+        else if (choice == 3)
+        {
+            break;
+        }
+    }
+    delete [] arr;
+    arr = nullptr;
+}
