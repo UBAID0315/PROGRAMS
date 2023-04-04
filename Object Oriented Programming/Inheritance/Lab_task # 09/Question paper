@@ -1,0 +1,42 @@
+1. Design a program that includes a base class named Animal, and two derived
+classes, Bird and Reptile, that are privately inherited from the Animal class.
+The Animal class has two public data members, the name and age of an
+animal, and a method speak(), leave that empty here. The Bird class has an
+additional private data member named wingLength, representing the length of
+the bird's wings. The Reptile class has an additional private data member
+named habitat, representing the environment where the reptile lives.
+The sub classes will override the speak() method, which displays the name
+and age, and the specific data members of each class along with a message
+indicating the type of the animal and the sound it makes. The Bird class has a
+specific message indicating that the bird can sing, while the Reptile class has
+a specific message indicating that the reptile can creep.
+The main function of the program should create an object of the Bird class
+and an object of the Reptile class, initialize their data members using the
+constructor, and call their speak() member function to display the information.
+Note: None of your class should have getter and setter methods
+Sample Output:
+
+----------------------------------------------------------------------------------------------------
+
+2. You have been asked to design a program that simulates the behavior of a
+Skimmer, which is a type of boat that is capable of both swimming and flying.
+To accomplish this, you will create a Skimmer class that is derived from two
+base classes, Boat and Plane using protected inheritence.
+
+The Boat class will contain data member called boatLength, which represents
+the length of the boat, and a member function called swim(), which prints the
+message “I am swimming”
+The Plane class will contain a data member called maxAltitude, which
+represents the maximum altitude the plane can reach, and a member function
+called fly(), which prints the message “I am flying”.
+The Skimmer class will contain two private data members called name, and
+numPassengers, which represents the number of passengers the skimmer can
+carry, and a public member function called swimAndFly(), which will class
+the swim() and fly() method of the super classes.
+In the main function, create an object of the Skimmer and initialize through
+constructor.
+Display the properties of the Skimmer object using the display() member
+function. Finally, call the swimAndFly() function to simulate the behavior of
+the Skimmer.
+Note: None of your class should have getter and setter methods, only initialize
+the object through a constructor.
