@@ -4,10 +4,26 @@
 #include<fstream>
 using namespace std;
 
+string* new_arr(string arr[],int size)
+{
+    string *xyz;
+    size *= 2;
+    xyz = new string [size];
+
+    delete [] arr;
+    arr = nullptr;
+
+    for (int i = 0; i < size; i++)
+    {
+        xyz[i] = arr[i];
+    }
+    return xyz;
+}
+
 int main()
 {
     fstream Filename;
-    int choice, size = 0;
+    int choice, size,i=0;
     string journal;
     
     cout<<"Array Size: ";
@@ -39,13 +55,17 @@ int main()
                 cout<<"Enter Journal: ";
                 getline(cin,journal);
             
-                if ( < size)
+                if (i < size)
                 {
-                    arr[size] = journal;
-                    cout<<"\nJournal added successfully"<<endl;
+                    arr[i] = journal;
+                    cout<<"\nJournal added successfully"<<endl;                        
                     i++;
                     Filename<<journal<<endl;                    
                     Filename.close();
+                }
+                else
+                {
+                    arr = new_arr(arr,size);
                 }
             }
         }   
