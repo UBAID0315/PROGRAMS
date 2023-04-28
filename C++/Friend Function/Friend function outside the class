@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+
+class Complex
+{
+    int real;
+    int img;
+    Complex friend add(const Complex &,const Complex &);
+    Complex friend sub(const Complex &,const Complex &);
+    public:
+        Complex()
+        {
+            real = 0;
+            img = 0;
+        }
+        Complex(int r,int i)
+        {
+            real = r;
+            img = i;
+        }
+        int getreal()
+        {
+            return real;
+        }
+        int getimg()
+        {
+            return img;
+        }
+};
+
+Complex add(const Complex &c1 ,const Complex &c2)
+{
+    Complex c3;
+
+    c3.real = c1.real + c2.real;
+    c3.img = c1.img + c2.img;
+
+    return c3;
+}
+Complex sub(const Complex &c1 ,const Complex &c2)
+{
+    Complex c3;
+
+    c3.real = c1.real - c2.real;
+    c3.img = c1.img - c2.img;
+
+    return c3;
+}
+
+int main()
+{
+    Complex c1(3,4),c2(6,7),c3;
+
+    c3 = add(c1,c2);
+    cout<<"Addition: "<<endl;
+    cout<<"Real: "<<c3.getreal()<<" Img: "<<c3.getimg()<<endl;
+    cout<<"Complex: "<<c3.getreal()<<" + "<<c3.getimg()<<"i"<<endl;
+}
