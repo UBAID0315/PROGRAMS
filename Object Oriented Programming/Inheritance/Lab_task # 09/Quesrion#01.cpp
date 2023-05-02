@@ -16,14 +16,14 @@ Animal::Animal()
 {
     age = 0;
     name = "";
-};
+}
 Animal::Animal(int age,string name)
 {
     this->age = age;
     this->name = name;
 }
 void Animal::speak()
-{};
+{}
 
 // ###############################################################
 
@@ -39,13 +39,13 @@ class Bird:private Animal
 Bird::Bird()
 {
     wing_Length = 0;
-};
+}
 Bird::Bird(int age, string name,int wing_len)
 {
     this->age = age;
     this->name = name;
     wing_Length = wing_len;
-};
+}
 void Bird::speak()
 {
     cout<<"I am a "<<name<<endl;
@@ -71,17 +71,17 @@ Reptile::Reptile(int age,string name,string habitat):Animal(age,name)
     this->age = age;
     this->name = name;
     this->habitat = habitat;
-};
+}
 Reptile::Reptile()
 {
     habitat = "";
-};
+}
 void Reptile::speak()
 {
     cout<<"I am a "<<name<<endl;
     cout<<"My Age is: "<<age<<endl;
     cout<<"I am a reptile and I can "<<habitat<<endl;
-};
+}
 
 // ##############################################################
 
